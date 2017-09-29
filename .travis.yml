@@ -1,4 +1,12 @@
+language: cpp
 script:
         - mkdir build && cd build
         - cmake ..
         - make test
+addons:
+        apt:
+                sources:
+                        - george-edison55-precise-backports
+                packages:
+                        - cmake-data
+                        - cmake
