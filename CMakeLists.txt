@@ -8,5 +8,7 @@ endif("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
 set(ENABLE_TEST ON)
 
 if(ENABLE_TEST)
-	find_package(GTest REQUIRED)
+	add_subdirectory(${CMAKE_SOURCE_DIR}/googletest)
+	add_executable(test_exec test.cpp)
+	target_link_libraries(test_exec gtest_main)
 endif()
